@@ -1,11 +1,3 @@
-/*
- *  ofxEQ.cpp
- *  xmlSettingsExample
- *
- *  Created by Martial Geoffre Rouland on 14/04/2010.
- *  Copyright 2010 __MyCompanyName__. All rights reserved.
- *
- */
 
 #include "ofxEQ.h"
 
