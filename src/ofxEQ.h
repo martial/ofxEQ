@@ -53,7 +53,6 @@ public:
 	float							ratio;
 	
 	
-	ofFbo							fboEqualizer;
     
         
 	FFTOctaveAnalyzer				FFTanalyzer;

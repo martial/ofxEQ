@@ -64,9 +64,8 @@ void ofxEQ::setup() {
 	// fbo
     
     viewerHeight = BUFFER_SIZE;
-	fboEqualizer.allocate((int)BUFFER_SIZE*2, (int)viewerHeight, GL_RGBA, 4);
 
-	
+
 	bIsReady = true;
 	
 }
@@ -231,10 +230,9 @@ void ofxEQ::normalize () {
 void ofxEQ::debugDraw () {
 		
     
-	fboEqualizer.begin();
 	
 	ofSetColor(0, 0, 0);
-	ofRect(0, 0, BUFFER_SIZE*2, viewerHeight);
+	ofDrawRectangle(0, 0, BUFFER_SIZE*2, viewerHeight);
 	
 	ofEnableAlphaBlending();
 	
@@ -252,30 +250,26 @@ void ofxEQ::debugDraw () {
 		
 		ofSetColor(colorRatio, 0, 0);
 		float val = leftPreview[i]*viewerHeight;
-		ofRect(i*1, viewerHeight - val, 1, val);
+        ofDrawRectangle(i*1, viewerHeight - val, 1, val);
 		
 		ofSetColor(colorRatio, 255, 0);
 		val = leftAveragePreview[i]*viewerHeight;
-		ofRect(i*1, viewerHeight-val, 1, 2);
-		
+        ofDrawRectangle(i*1, viewerHeight-val, 1, 2);
 		
 		ofPopMatrix();
 		
-		
 		ofSetColor( 0,colorRatio, 0);
 		val = rightPreview[i]*viewerHeight;
-		ofRect((BUFFER_SIZE*1)+i*1, viewerHeight - val, 1, val);
+        ofDrawRectangle((BUFFER_SIZE*1)+i*1, viewerHeight - val, 1, val);
 		
 		ofSetColor(255, colorRatio, 0);
 		val = rightAveragePreview[i]*viewerHeight;
-		ofRect((BUFFER_SIZE*1)+i*1, viewerHeight-val, 1, 2);
+        ofDrawRectangle((BUFFER_SIZE*1)+i*1, viewerHeight-val, 1, 2);
 						
 	}
     
 	ofDisableAlphaBlending();
-	fboEqualizer.end();
 	
-	fboEqualizer.draw(0,0);
 	
 }
 
