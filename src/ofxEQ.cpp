@@ -2,6 +2,7 @@
 #include "ofxEQ.h"
 
 ofxEQ::ofxEQ() {
+    
 	bIsReady = false;
     
     minRange = 1;
